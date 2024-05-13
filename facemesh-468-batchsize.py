@@ -26,9 +26,9 @@ class FacialLandmark:
     def get_landmarks_coordinate(self):
         if self.landmarks:
             return np.array(
-                [[landmark.x, landmark.y] for landmark in self.landmarks.landmark]
+                [[landmark.x, landmark.y, landmark.z] for landmark in self.landmarks.landmark]
             )
-        return np.zeros((468, 2))
+        return np.zeros((468, 3))
 
 
 class MultiThreadExtractor:
